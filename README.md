@@ -2,7 +2,7 @@
 Udacity Self-Driving Car Nanodegree - Unscented Kalman Filter Implementation
 
 ## Overview
-This project consists of implementing an [Unscented Kalman Filter](https://en.wikipedia.org/wiki/Kalman_filter#Unscented_Kalman_filter) with C++. A simulator provided by Udacity ([it could be downloaded here](https://github.com/udacity/self-driving-car-sim/releases)) generates noisy RADAR and LIDAR measurements of the position and velocity of an object, and the Unscented Kalman Filter[UKF] must fusion those measurements to predict the position of the object. The communication between the simulator and the UKF is done using the [uWebSockets](https://github.com/uNetworking/uWebSockets) implementation on the UKF side. To get this project started, Udacity provides a seed project that could be found [here](https://github.com/udacity/CarND-Unscented-Kalman-Filter-Project).
+This project consists of implementing an [Unscented Kalman Filter](https://en.wikipedia.org/wiki/Kalman_filter#Unscented_Kalman_filter) with C++. A simulator provided by Udacity ([it can be downloaded here](https://github.com/udacity/self-driving-car-sim/releases)) generates noisy radar and lidar measurements from the position and velocity of an object, and the Unscented Kalman Filter [UKF] must fuse those measurements to predict the position of the object. The communication between the simulator and the UKF is done using the [uWebSockets](https://github.com/uNetworking/uWebSockets) implementation on the UKF side. To get this project started, Udacity provides a seed project that can be found [here](https://github.com/udacity/CarND-Unscented-Kalman-Filter-Project).
 
 ## Prerequisites
 The project has the following dependencies (from Udacity's seed project):
@@ -31,14 +31,15 @@ Connected!!!
 ```
 As you can see, the simulator connect to it right away.
 
-The following is a snapshot of the simulator after running my final implementation using both liar and radar measurements
+The following is a snapshot of the simulator after running my final implementation using both lidar and radar measurements
+
 ![](https://github.com/JuAnne/CarND-P7-Unscented-Kalman-Filter/blob/master/output/lidar_and_radar.PNG)
 
 Based on the provided data, my UKF will generate the below RMSE outcome
 ```
 px, py, vx, vy = [0.0682, 0.0809, 0.1719, 0.2027]
 ```
-which meets the Accuracy CRITERIA: 
+which meets the accuracy criteria: 
 ```
 px, py, vx, vy output coordinates must have an RMSE <= [.09, .10, .40, .30] 
 ```
@@ -60,7 +61,7 @@ As well as my previous EKF for comparisons -
 As expected, the UKF that uses both lidar and radar sensor measurements is more accurate than using one sensor at a time, and also achieves lower RMSE result than EKF.
 
 ## Visualization
-Below are the plots for Lidar and Radar NIS (Normalized Innovation Squared), which shows the UKF is consistent based on the provided data set.
+Below are the plots for lidar and radar normalized innovation squared (NIS), which shows the UKF is consistent based on the provided data set.
 
 ![](https://github.com/JuAnne/CarND-P7-Unscented-Kalman-Filter/blob/master/output/NIS_Lidar.PNG)
 ![](https://github.com/JuAnne/CarND-P7-Unscented-Kalman-Filter/blob/master/output/NIS_radar.PNG)
